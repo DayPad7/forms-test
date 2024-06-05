@@ -1,0 +1,62 @@
+[{
+    "title": "Ingresa tu Nombre  *",
+    "id":"field1",
+    "name":"name",
+    "type":"text",
+    "placeholder": "Enter your name",
+    "required":true
+
+}
+ ,
+ {
+    "title": "Ingresa tu Email",
+    "id": "field2" ,
+    "name": "email",
+    "type": "email",
+    "placeholder": "Enter your email",
+    "required":true
+
+ }
+ ,
+ {"title": "Ingresa tu password",
+    "id": "field3" ,
+    "name": "password",
+    "type": "password",
+    "required":true
+
+    
+ }
+ ,
+ {
+    "title": "Ingresa numero",
+    "id": "field4" ,
+    "name": "number",
+    "type": "number"
+ },
+ 
+ {
+    "title": "Esto es un Checkbox ",
+    "id": "field5" ,
+    "name": "checkbox",
+    "type": "checkbox"
+ }
+ ,
+ 
+ {
+    "title": "Esto es un Select",
+    "id": "field6",
+    "name": "select",
+    "type": "select",
+    "options": [
+      { "value": "option1", "label": "Opción 1" },
+      { "value": "option2", "label": "Opción 2" },
+      { "value": "option3", "label": "Opción 3" }
+    ]
+  }
+  
+ 
+
+
+ 
+ 
+]
