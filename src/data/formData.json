@@ -1,62 +1,96 @@
-[{
-    "title": "Ingresa tu Nombre  *",
-    "id":"field1",
-    "name":"name",
-    "type":"text",
-    "placeholder": "Enter your name",
-    "required":true
+[
+   {
+     "title": "Name *",
+     "id": "field1",
+     "name": "name",
+     "type": "text",
+     "placeholder": "Write your name",
+     "required": true
+   },
+   {
+     "title": "Email Address*",
+     "id": "field2",
+     "name": "email",
+     "type": "email",
+     "placeholder": "Write a random email address ",
+     "required": true
+   },
+   {
+     "title": "Password *",
+     "id": "field3",
+     "name": "password",
+     "type": "password",
+     "placeholder": "type password... ",
+     "required": true
+   },
+   {
+     "title": " lucky number",
+     "id": "field4",
+     "name": "number",
+     "type": "number",
+     "placeholder": "type a number... "
 
-}
- ,
- {
-    "title": "Ingresa tu Email",
-    "id": "field2" ,
-    "name": "email",
-    "type": "email",
-    "placeholder": "Enter your email",
-    "required":true
 
- }
- ,
- {"title": "Ingresa tu password",
-    "id": "field3" ,
-    "name": "password",
-    "type": "password",
-    "required":true
-
+   },
+   {
+      "title": "Intereses",
+      "id": "field11",
+      "name": "interests",
+      "type": "checkbox",
+      "options": [
+        { "value": "option1", "label": "Deportes" },
+        { "value": "option2", "label": "Música" },
+        { "value": "option3", "label": "Viajes" }
+      ]
+    },
     
- }
- ,
- {
-    "title": "Ingresa numero",
-    "id": "field4" ,
-    "name": "number",
-    "type": "number"
- },
- 
- {
-    "title": "Esto es un Checkbox ",
-    "id": "field5" ,
-    "name": "checkbox",
-    "type": "checkbox"
- }
- ,
- 
- {
-    "title": "Esto es un Select",
-    "id": "field6",
-    "name": "select",
-    "type": "select",
-    "options": [
-      { "value": "option1", "label": "Opción 1" },
-      { "value": "option2", "label": "Opción 2" },
-      { "value": "option3", "label": "Opción 3" }
-    ]
-  }
+   {
+     "title": "Choose a color",
+     "id": "field6",
+     "name": "select",
+     "type": "select",
+     "placeholder":"Select",
+     "options":
+     [
+       { "value": "option1", "label": "blue" },
+       { "value": "option2", "label": "red" },
+       { "value": "option3", "label": "pink" }
+     ]
+   } ,
   
+
+    {
+      "title": "Ingresa un texto",
+      "id": "field40",
+      "name": "text",
+      "type": "textarea"
+    },
+    {
+      "title": "Sitio web",
+      "id": "field9",
+      "name": "website",
+      "type": "url",
+      "placeholder": "Escribe una URL válida"
+    }
+    
+,    
+{
+   "title": "Fecha de nacimiento",
+   "id": "field7",
+   "name": "birthdate",
+   "type": "date",
+   "required": true
+
+ }
+, 
  
 
-
+    {
+      "title": "Adjuntar archivo",
+      "id": "field10",
+      "name": "attachment",
+      "type": "file"
+    }
+    
+ ]
  
- 
-]

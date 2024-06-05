@@ -1,105 +1,45 @@
-import { useState } from "react";
+// Form.jsx
+import React from "react";
+import { useForm, FormProvider } from "react-hook-form";
+import Generator from "./Generator.jsx";
 import formData from "/src/data/formData.json";
+import { GrMail } from "react-icons/gr";
 
-console.log(formData);
 const Form = () => {
-  const [formValues, setFormValues] = useState({});
-  const [formErrors, setFormErrors] = useState({});
-  const [formResult, setFormResult] = useState({});
+  const methods = useForm();
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-    // You can add validation logic here if needed
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormResult(e);
-    const errors = validateForm(formValues);
-    console.log("validando errores");
-    if (Object.keys(errors).length === 0) {
-      // Form is valid, you can submit it
-      console.log("Form is valid, submitting...");
-      console.log(formResult);
-    } else {
-      console.log(errors);
-      // Form has errors, update state to display them
-      setFormErrors(errors);
-    }
-  };
+  const onSubmit = methods.handleSubmit((data) => {
+    console.log(data);
+  });
 
-  const validateForm = (values) => {
-    // Add your validation logic here
-    let errors = {};
-    formData.forEach((element) => {
-      // Example validation: required fields
-      // Dentro de la función validateForm
-      if (element.required && !values[element.id]) {
-        errors[element.id] = `${element.title} is required`;
-      }
-
-      // You can add more validation rules based on element.type if needed
-    });
-    return errors;
-  };
   return (
-    <div>
-      {" "}
-      <h1>Formulario</h1>
-      <form onSubmit={handleSubmit}>
-        {formData.map((element) =>
-          generator(element, handleInputChange, formErrors)
-        )}
-        <button type="submit">Submit</button>
-      </form>
-      ;{" "}
-    </div>
+    <>
+      <FormProvider {...methods}>
+        <div>
+          <h1 className=" text-xl font-semibold leading-7 text-gray-900 text-center py-5">
+            Formulario
+          </h1>
+
+          <form className="container py-5" onSubmit={onSubmit}>
+            <div className="grid gap-5 md:grid-cols-2">
+              {formData.map((element) => (
+                <Generator key={element.id} element={element} />
+              ))}
+            </div>
+            <div className="mt-5">
+              <button
+                type="submit"
+                className="p-5 rounded-md bg-blue-600 font-semibold text-white flex items-center gap-1 hover:bg-blue-800"
+              >
+                <GrMail />
+                Submit Form
+              </button>
+            </div>
+          </form>
+        </div>
+      </FormProvider>
+    </>
   );
 };
 
-const generator = (element, handleInputChange, formErrors) => {
-  return (
-    <div key={element.id}>
-      <label htmlFor={element.id}>{element.title}</label>
-      {element.type === "select" ? (
-        <select key={element.id} name={element.id} onChange={handleInputChange}>
-          {element.options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.value}
-            </option>
-          ))}
-        </select>
-      ) : (
-        <>
-          <input
-            key={element.id}
-            type={element.type}
-            name={element.id}
-            placeholder={element.placeholder}
-            onChange={handleInputChange}
-          />
-          {formErrors && formErrors[element.id] && (
-            <span>{formErrors[element.id]}</span>
-          )}
-        </>
-      )}
-    </div>
-  );
-
-  /*
-  switch (element.type) {
-    case "email":
-      return  <input key={element.id} type="email" />;
-      break;
-
-    case "password":
-      return <input key={element.id} type="password" />;
-      break;
-
-    default:
-      break;
-  }
-
-  */
-};
 export default Form;
