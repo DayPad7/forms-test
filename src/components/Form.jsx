@@ -10,6 +10,7 @@ const Form = () => {
 
   const onSubmit = methods.handleSubmit((data) => {
     console.log(data);
+    window.alert("Form submitted successfully!");
   });
 
   return (
@@ -17,7 +18,7 @@ const Form = () => {
       <FormProvider {...methods}>
         <div>
           <h1 className=" text-xl font-semibold leading-7 text-gray-900 text-center py-5">
-            Formulario
+            Form
           </h1>
 
           <form className="container py-5" onSubmit={onSubmit}>

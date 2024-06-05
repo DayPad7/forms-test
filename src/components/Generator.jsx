@@ -1,11 +1,8 @@
 // Input.jsx
-import React from "react";
-import cn from "classnames";
 import { useFormContext } from "react-hook-form";
 
 const Generator = ({ element }) => {
-  const { register, errors } = useFormContext();
-  const error = errors && errors[element.id];
+  const { register } = useFormContext();
   const isRequired = element.required || false;
 
   return (
@@ -19,9 +16,10 @@ const Generator = ({ element }) => {
           key={element.id}
           name={element.id}
           required={isRequired}
+          defaultValue=""
           {...register(element.id)}
         >
-          <option value="" disabled selected>
+          <option value="" disabled>
             {element.placeholder}
           </option>
           {element.options.map((option) => (
@@ -44,6 +42,14 @@ const Generator = ({ element }) => {
             </label>
           ))}
         </div>
+      ) : element.type === "textarea" ? (
+        <textarea
+          id={element.id}
+          required={isRequired}
+          className="p-5 font-medium rounded-md w-full border border-slate-300 placeholder:opacity-60"
+          placeholder={element.placeholder}
+          {...register(element.id)}
+        />
       ) : (
         <div className="flex flex-col w-full gap-2">
           <div className="flex justify-between">

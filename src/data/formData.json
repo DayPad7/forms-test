@@ -33,9 +33,9 @@
 
    },
    {
-      "title": "Intereses",
+      "title": "Hobbies",
       "id": "field11",
-      "name": "interests",
+      "name": "hobbies",
       "type": "checkbox",
       "options": [
         { "value": "option1", "label": "Deportes" },
@@ -58,35 +58,31 @@
      ]
    } ,
   
-
     {
-      "title": "Ingresa un texto",
+      "title": "Write some text",
       "id": "field40",
       "name": "text",
       "type": "textarea"
     },
     {
-      "title": "Sitio web",
+      "title": "Website",
       "id": "field9",
       "name": "website",
       "type": "url",
-      "placeholder": "Escribe una URL válida"
+      "placeholder": "write a valid URL"
     }
     
 ,    
 {
-   "title": "Fecha de nacimiento",
+   "title": "Birth Date",
    "id": "field7",
    "name": "birthdate",
    "type": "date",
    "required": true
-
  }
 , 
- 
-
     {
-      "title": "Adjuntar archivo",
+      "title": "File",
       "id": "field10",
       "name": "attachment",
       "type": "file"
